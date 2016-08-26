@@ -45,8 +45,7 @@ containernet> snort_vnf cat /snort-logs/200.0.0.1/ICMP_ECHO
 ```
 
 ### Extension to the demo (optional):
-```
-
+```bash
 # show snort alerts and how we can directly interact with a container (third terminal)
 docker exec -it mn.snort_vnf /bin/bash
 tail -f /snort-logs/alert
