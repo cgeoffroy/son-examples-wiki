@@ -81,6 +81,23 @@ ns_input ssh -o ConnectTimeout=1 -p 12345 ns_output
 
 
 # FW and Snort-based Demo
+```bash
+cd ~/son-examples/service-projects/sonata-fw-dpi-service-emu/
+# show contents of descriptors (any editor)
+subl .
+
+# package the example service
+son-package --project . -n sonata-fw-dpi-service
+
+# start the emulator with a demo topology (execute in emulator VM or second terminal)
+cd ~/son-emu
+sudo python src/emuvim/examples/sonata_y1_demo_topology_1_w_ls_and_sap.py 
+
+# push the service package to the emulator gatekeeper
+son-push http://127.0.0.1:5000 -U target/sonata-fw-dpi-service.son
+
+# instantiate the pushed service on the emulator
+son-push http://127.0.0.1:5000 -D last
 
 # FW and vTC-based Demo
 TBD. VNFs not ready yet.
