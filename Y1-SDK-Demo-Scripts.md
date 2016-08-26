@@ -99,5 +99,13 @@ son-push http://127.0.0.1:5000 -U target/sonata-fw-dpi-service.son
 # instantiate the pushed service on the emulator
 son-push http://127.0.0.1:5000 -D last
 
+containernet> nodes
+containernet> links
+containernet> snort_vnf ifconfig
+containernet> ns_input ping -c4 ns_output
+containernet> snort_vnf cat /snort-logs/200.0.0.1/ICMP_ECHO
+
+```
+
 # FW and vTC-based Demo
 TBD. VNFs not ready yet.
