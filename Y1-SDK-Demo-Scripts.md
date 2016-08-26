@@ -80,7 +80,7 @@ ns_input ssh -o ConnectTimeout=1 -p 12345 ns_output
 ```
 
 
-# FW and Snort-based Demo
+# FW and Snort-based Demo (basic)
 
 What does it show?
 
@@ -115,6 +115,11 @@ containernet> ovs1 ifconfig
 containernet> ctrl ifconfig
 containernet> ns_input ping -c4 ns_output
 
+```
+
+# FW and Snort-based Demo (with monitoring)
+```bash
+TBD (Steven?)
 ```
 
 # FW and vTC-based Demo
