@@ -12,6 +12,14 @@ git cone git@github.com:sonata-nfv/son-examples.git
 
 # Single Snort-based Demo
 
+What does it show?
+
+* Example service and its descriptors (NSD, VNFDs)
+* `son-publish` to SDK catalogue
+* `son-package` crating a *.son file
+* `son-push` to upload a package to `son-emu` and to instantiate it
+* `son-emu` to test/play around with the service and (optionally) re-configure the Snort VNF at runtime
+
 Video: https://www.youtube.com/watch?v=nj5hTk1LLe4
 
 ```bash
