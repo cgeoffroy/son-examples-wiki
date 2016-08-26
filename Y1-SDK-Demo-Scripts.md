@@ -13,7 +13,7 @@ git cone git@github.com:sonata-nfv/son-examples.git
 # Single Snort-based Demo
 ```bash
 cd son-examples/service-projects/sonata-snort-service-emu/
-# show contents of descriptors
+# show contents of descriptors (any editor)
 subl .
 
 # publish a descriptor to the SDK catalogue
