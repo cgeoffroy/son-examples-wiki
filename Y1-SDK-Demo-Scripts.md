@@ -50,6 +50,9 @@ son-push http://127.0.0.1:5000 -U target/sonata-snort-service.son
 # instantiate the pushed service on the emulator
 son-push http://127.0.0.1:5000 -D last
 
+# list running containers
+son-emu-cli compute list
+
 # show some emulator features (execute in emulator VM or second terminal)
 containernet> nodes
 containernet> links
@@ -126,6 +129,10 @@ son-push http://127.0.0.1:5000 -U target/sonata-fw-dpi-service.son
 # instantiate the pushed service on the emulator
 son-push http://127.0.0.1:5000 -D last
 
+# list running containers
+son-emu-cli compute list
+
+# show some emulator features (execute in emulator VM or second terminal)
 containernet> nodes
 containernet> links
 containernet> snort ifconfig
