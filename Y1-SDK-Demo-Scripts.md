@@ -81,6 +81,15 @@ ns_input ssh -o ConnectTimeout=1 -p 12345 ns_output
 
 
 # FW and Snort-based Demo
+
+What does it show?
+
+* Example service and its descriptors (NSD, VNFDs)
+* `son-publish` to SDK catalogue
+* `son-package` crating a *.son file
+* `son-push` to upload a package to `son-emu` and to instantiate it
+* `son-emu` advanced chaining: 2 VNFs in data plane, dedicated controller VNF
+
 ```bash
 cd ~/son-examples/service-projects/sonata-fw-dpi-service-emu/
 # show contents of descriptors (any editor)
@@ -101,9 +110,10 @@ son-push http://127.0.0.1:5000 -D last
 
 containernet> nodes
 containernet> links
-containernet> snort_vnf ifconfig
+containernet> snort ifconfig
+containernet> ovs1 ifconfig
+containernet> ctrl ifconfig
 containernet> ns_input ping -c4 ns_output
-containernet> snort_vnf cat /snort-logs/200.0.0.1/ICMP_ECHO
 
 ```
 
