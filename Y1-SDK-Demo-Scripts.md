@@ -12,6 +12,13 @@ git cone git@github.com:sonata-nfv/son-examples.git
 
 # Single Snort-based Demo
 
+Used chain:
+```
++----------+     +-----------+     +-----------+
+| ns_input <-----> snort_vnf <-----> ns_output |
++----------+     +-----------+     +-----------+
+```
+
 What does it show?
 
 * Example service and its descriptors (NSD, VNFDs)
@@ -81,6 +88,17 @@ ns_input ssh -o ConnectTimeout=1 -p 12345 ns_output
 
 
 # FW and Snort-based Demo (basic)
+
+Used chain:
+```
+                 +---------+
+                 | fw_ctrl |
+                 +---------+
+                      |
++----------+     +---------+     +-----------+     +-----------+
+| ns_input <-----> fw_ovs1 <-----> snort_vnf <-----> ns_output |
++----------+     +---------+     +-----------+     +-----------+
+```
 
 What does it show?
 
