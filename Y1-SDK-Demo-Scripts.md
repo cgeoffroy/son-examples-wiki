@@ -30,7 +30,15 @@ sudo python src/emuvim/examples/sonata_y1_demo_topology_1_w_ls_and_sap.py
 son-push http://127.0.0.1:5000 -U target/sonata-snort-service.son
 
 # instantiate the pushed service on the emulator
-son-push http://127.0.0.1:5000 -D latest
+son-push http://127.0.0.1:5000 -D last
+
+# show some emulator features (execute in emulator VM or second terminal)
+containernet> nodes
+containernet> links
+containernet> snort_vnf ifconfig
+containernet> ns_input ping -c4 ns_output
+containernet> snort_vnf cat /snort-logs/200.0.0.1/ICMP_ECHO
+
 
 
 
