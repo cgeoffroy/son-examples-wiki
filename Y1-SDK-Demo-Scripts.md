@@ -42,17 +42,32 @@ containernet> snort_vnf ifconfig
 containernet> ns_input ping -c4 ns_output
 containernet> snort_vnf cat /snort-logs/200.0.0.1/ICMP_ECHO
 
+```
+
+### Extension to the demo (optional):
+```
+
 # show snort alerts and how we can directly interact with a container (third terminal)
 docker exec -it mn.snort_vnf /bin/bash
 tail -f /snort-logs/alert
 
 # generate a alert with a SSH connection 
+ns_input ssh ns_output
 
 # show that our snort rules only detect SSH on tcp:22
+ns_output ncat -k -l 12345 & 
+ns_input ssh -o ConnectTimeout=1 -p 12345 ns_output
 
-# reconfigure snort to detect SSH on all ports using DPI functionalities
+# reconfigure snort to detect SSH on all ports using DPI functionalities (third terminal)
+vim /etc/snort/snort.conf
+(uncomment last line and save file)
+sh restart_snort.sh 
+(wait some time)
+sh restart_snort.sh 
+tail -f /snort-logs/alert
 
-
+# show that ssh on 12345 is now detected
+ns_input ssh -o ConnectTimeout=1 -p 12345 ns_output
 
 
 ```
