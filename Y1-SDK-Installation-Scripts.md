@@ -38,3 +38,13 @@ vagrant ssh
 ## `son-analyze` (??)
 
 Video: TBD
+
+Warning: the initial `boostrap` command takes some time and bandwithi. If every is already in cache, then the command is immediate.
+
+
+```bash
+docker pull registry.sonata-nfv.eu:5000/son-analyze:latest
+docker run -it --rm=true -v "/var/run/docker.sock:/var/run/docker.sock" registry.sonata-nfv.eu:5000/son-analyze bootstrap
+docker run -it --rm=true -v "/var/run/docker.sock:/var/run/docker.sock" -v "$(pwd)/outputs:/son-analyze/outputs" registry.sonata-nfv.eu:5000/son-analyze run
+
+```
