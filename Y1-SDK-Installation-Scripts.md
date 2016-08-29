@@ -35,7 +35,7 @@ vagrant ssh
 
 
 
-## `son-analyze` (??)
+## `son-analyze`
 
 Video: TBD
 
